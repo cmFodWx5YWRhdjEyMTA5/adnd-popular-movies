@@ -29,7 +29,7 @@ import com.udacity.popularmovies.config.ApiConfig.UrlParamValue;
 import com.udacity.popularmovies.config.SettingsActivity;
 import com.udacity.popularmovies.databinding.ActivityMovieListBinding;
 import com.udacity.popularmovies.moviesbookmarks.BookmarkActivity;
-import com.udacity.popularmovies.moviesfeed.models.Movie;
+import com.udacity.popularmovies.moviesfeed.model.Movie;
 import com.udacity.popularmovies.moviesfeed.viewmodel.MovieListActivityViewModel;
 import com.udacity.popularmovies.shared.AdaptiveGridLayout;
 import com.udacity.popularmovies.shared.BottomNavigationBehavior;

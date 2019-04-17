@@ -2,8 +2,8 @@ package com.udacity.popularmovies.moviesfeed.viewmodel;
 
 import android.app.Application;
 
-import com.udacity.popularmovies.moviesfeed.models.Movie;
-import com.udacity.popularmovies.moviesfeed.models.MovieRepository;
+import com.udacity.popularmovies.moviesfeed.model.Movie;
+import com.udacity.popularmovies.moviesfeed.model.MovieRepository;
 
 import java.util.List;
 

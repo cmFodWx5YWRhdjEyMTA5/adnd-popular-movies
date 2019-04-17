@@ -6,12 +6,12 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="1dp"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/small_layout_margin"
         android:layout_marginBottom="@dimen/small_layout_margin"
         android:layout_marginLeft="@dimen/default_layout_margin"
         android:layout_marginRight="@dimen/default_layout_margin"
-        android:background="@color/colorLightGreyDarker"/>
+        android:background="@color/colorLightGrey"/>
 
 </LinearLayout>

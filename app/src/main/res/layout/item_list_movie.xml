@@ -9,7 +9,7 @@
     <data>
         <variable
             name="movie"
-            type="com.udacity.popularmovies.moviesfeed.models.Movie"/>
+            type="com.udacity.popularmovies.moviesfeed.model.Movie"/>
     </data>
 
     <LinearLayout

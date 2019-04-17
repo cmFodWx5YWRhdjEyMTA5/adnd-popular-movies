@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.udacity.popularmovies.R;
-import com.udacity.popularmovies.moviedetails.models.Review;
+import com.udacity.popularmovies.moviedetails.model.Review;
 
 import java.util.List;
 

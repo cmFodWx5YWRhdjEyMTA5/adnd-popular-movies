@@ -18,7 +18,7 @@ import com.squareup.picasso.Picasso;
 import com.udacity.popularmovies.BuildConfig;
 import com.udacity.popularmovies.R;
 import com.udacity.popularmovies.config.ApiConfig;
-import com.udacity.popularmovies.moviedetails.models.Video;
+import com.udacity.popularmovies.moviedetails.model.Video;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,5 +1,5 @@
 
-package com.udacity.popularmovies.moviesfeed.models;
+package com.udacity.popularmovies.moviesfeed.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

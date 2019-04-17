@@ -1,4 +1,4 @@
-package com.udacity.popularmovies.moviesfeed.models;
+package com.udacity.popularmovies.moviesfeed.model;
 
 import android.app.Application;
 

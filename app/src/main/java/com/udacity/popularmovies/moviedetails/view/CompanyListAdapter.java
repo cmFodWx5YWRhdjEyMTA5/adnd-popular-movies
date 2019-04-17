@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import com.udacity.popularmovies.R;
 import com.udacity.popularmovies.config.ApiConfig;
-import com.udacity.popularmovies.moviedetails.models.ProductionCompany;
+import com.udacity.popularmovies.moviedetails.model.ProductionCompany;
 
 import java.util.List;
 

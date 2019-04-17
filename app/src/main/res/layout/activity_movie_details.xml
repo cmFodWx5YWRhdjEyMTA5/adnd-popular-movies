@@ -13,7 +13,7 @@
 
         <variable
             name="movieDetailsResponse"
-            type="com.udacity.popularmovies.moviedetails.models.MovieDetailsResponse" />
+            type="com.udacity.popularmovies.moviedetails.model.MovieDetailsResponse" />
         <variable
             name="clickHandler"
             type="com.udacity.popularmovies.moviedetails.view.MovieDetailsActivity.MovieDetailsActivityHandlers"/>
@@ -70,6 +70,7 @@
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
         </com.google.android.material.appbar.AppBarLayout>
+
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/nested_scroll_movie_details"
@@ -133,14 +134,6 @@
                         android:textAppearance="@style/Widget.MaterialComponents.Button"/>
 
                 </LinearLayout>
-
-
-                <!-- SECTION INFO START -->
-                <!--<TextView-->
-                    <!--style="@style/textDetailsHeader"-->
-                    <!--android:background="?android:attr/selectableItemBackground"-->
-                    <!--app:rippleColor="@color/colorAccent"-->
-                    <!--android:text="@string/details" />-->
 
                 <include layout="@layout/divider_header" />
 
@@ -217,7 +210,6 @@
                                     android:rating="1"
                                     android:stepSize="1" />
 
-                                <!--android:text="@{String.valueOf(safeUnbox(movieDetailsResponse.voteAverage))}"-->
                                 <TextView
                                     android:text="@{String.valueOf(safeUnbox(movieDetailsResponse.voteAverage))}"
                                     android:id="@+id/tv_vote_average"
@@ -230,7 +222,6 @@
                                     android:text="@string/slash"
                                     android:textColor="@color/colorMediumGrey" />
 
-                                <!--android:text="@{String.valueOf(safeUnbox(movieDetailsResponse.voteCount))}"-->
                                 <TextView
                                     android:text="@{String.valueOf(safeUnbox(movieDetailsResponse.voteCount))}"
                                     android:id="@+id/tv_vote_count"
@@ -254,7 +245,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="@dimen/medium_layout_margin">
 
-                            <!--android:text="@{movieDetailsResponse.releaseDate}"-->
                             <TextView
                                 android:text="@{movieDetailsResponse.releaseDate}"
                                 android:id="@+id/tv_release_date"
@@ -268,7 +258,6 @@
                                 android:textStyle="italic|bold"
                                 tools:text="2018" />
 
-                            <!--android:text="@{String.valueOf(safeUnbox(movieDetailsResponse.runtime))}"-->
                             <TextView
                                 android:text="@{String.valueOf(safeUnbox(movieDetailsResponse.runtime))}"
                                 android:id="@+id/tv_runtime"
@@ -289,7 +278,6 @@
                                 style="@style/DetailItemLabelStyle"
                                 android:text="@string/original_title_label" />
 
-                            <!--android:text="@{movieDetailsResponse.originalTitle}"-->
                             <TextView
                                 android:text="@{movieDetailsResponse.originalTitle}"
                                 android:id="@+id/tv_title"
@@ -304,7 +292,6 @@
                                 style="@style/DetailItemLabelStyle"
                                 android:text="@string/spoken_languages_label" />
 
-                            <!--android:text="@{movieDetailsResponse.originalLanguage}"-->
                             <TextView
                                 android:text="@{movieDetailsResponse.originalLanguage}"
                                 android:id="@+id/tv_original_language"
@@ -319,7 +306,6 @@
                                 style="@style/DetailItemLabelStyle"
                                 android:text="@string/popularity_label" />
 
-                            <!--android:text="@{String.valueOf(safeUnbox(movieDetailsResponse.popularity))}"-->
                             <TextView
                                 android:text="@{String.valueOf(safeUnbox(movieDetailsResponse.popularity))}"
                                 android:id="@+id/tv_popularity"
@@ -334,9 +320,9 @@
                                 style="@style/DetailItemLabelStyle"
                                 android:text="@string/budget_label" />
 
-                            <!--android:text="@{String.valueOf(safeUnbox(movieDetailsResponse.budget))}"-->
+                            <!-- app:formatIntegerValue="@{movieDetailsResponse.budget}" -->
                             <TextView
-                                android:text="@{String.valueOf(safeUnbox(movieDetailsResponse.budget))}"
+                                app:checkIfZeroAndFormat="@{safeUnbox(movieDetailsResponse.budget)}"
                                 android:id="@+id/tv_buget"
                                 style="@style/DetailItemValueStyle"
                                 tools:text="$1.780,000.00" />
@@ -349,9 +335,10 @@
                                 style="@style/DetailItemLabelStyle"
                                 android:text="@string/revenue_label" />
 
-                            <!--android:text="@{String.valueOf(safeUnbox(movieDetailsResponse.revenue))}"-->
+                            <!--  android:text="@{String.valueOf(safeUnbox(movieDetailsResponse.revenue))}"  -->
                             <TextView
-                                android:text="@{String.valueOf(safeUnbox(movieDetailsResponse.revenue))}"
+                                app:checkIfZeroAndFormat="@{safeUnbox(movieDetailsResponse.revenue)}"
+
                                 android:id="@+id/tv_revenue"
                                 style="@style/DetailItemValueStyle"
                                 tools:text="$3,298,111.86" />
@@ -382,7 +369,6 @@
                         android:orientation="vertical"
                         android:padding="@dimen/default_layout_margin">
 
-                        <!--android:text="@{movieDetailsResponse.tagline}"-->
                         <TextView
                             android:text="@{movieDetailsResponse.tagline}"
                             android:id="@+id/tv_tagline"
@@ -394,7 +380,6 @@
                             android:textStyle="italic|bold"
                             tools:text="Some Missions Are Not A Choice" />
 
-                        <!--android:text="@{movieDetailsResponse.overview}"-->
                         <TextView
                             android:text="@{movieDetailsResponse.overview}"
                             android:id="@+id/tv_overview"

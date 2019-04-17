@@ -5,8 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,19 +19,21 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.databinding.BindingAdapter;
 import androidx.databinding.DataBindingUtil;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.squareup.picasso.Picasso;
 import com.udacity.popularmovies.BuildConfig;
 import com.udacity.popularmovies.R;
 import com.udacity.popularmovies.config.ApiConfig;
 import com.udacity.popularmovies.databinding.ActivityMovieDetailsBinding;
 import com.udacity.popularmovies.localdatabase.BookmarkContract.BookmarkEntry;
-import com.udacity.popularmovies.moviedetails.models.MovieDetailsResponse;
-import com.udacity.popularmovies.moviedetails.models.ProductionCompany;
-import com.udacity.popularmovies.moviedetails.models.Review;
-import com.udacity.popularmovies.moviedetails.models.Video;
-import com.udacity.popularmovies.moviesfeed.models.Movie;
+import com.udacity.popularmovies.moviedetails.model.MovieDetailsResponse;
+import com.udacity.popularmovies.moviedetails.model.ProductionCompany;
+import com.udacity.popularmovies.moviedetails.model.Review;
+import com.udacity.popularmovies.moviedetails.model.Video;
+import com.udacity.popularmovies.moviesfeed.model.Movie;
 import com.udacity.popularmovies.service.MovieDataService;
 import com.udacity.popularmovies.service.RetrofitInstance;
 import com.udacity.popularmovies.shared.LanguageUtils;
@@ -49,9 +53,7 @@ import retrofit2.Response;
 public class MovieDetailsActivity extends AppCompatActivity {
 
     private static final String API_KEY = BuildConfig.API_KEY;
-
     private static final String LOG_TAG = MovieDetailsActivity.class.getSimpleName();
-    // The Loader ID to be used by the LoaderManager
 
     private static final int HIDE = View.GONE;
     private static final int SHOW = View.VISIBLE;
@@ -81,7 +83,6 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
     private int deviceWidth;
     private ActivityMovieDetailsBinding activityMovieDetailsBinding;
-
 
     FloatingActionButton floatingActionButton;
 
@@ -181,6 +182,11 @@ public class MovieDetailsActivity extends AppCompatActivity {
                 intent.putExtra(ApiConfig.JsonKey.ORIGINAL_TITLE, movieDetailsResponse.getOriginalTitle());
             startActivity(intent);
         }
+
+        private void testMethod(String string) {
+            Toast.makeText(context, "Test Method Clicked!", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     private void initViews() {
@@ -411,16 +417,6 @@ public class MovieDetailsActivity extends AppCompatActivity {
         toast.show();
     }
 
-    /**
-     * When called must receive a number that will be converted to a String with the pattern $###,###,###.##
-     *
-     * @param numberToBeFormated is the number (Buget or Revenue) to be formated.
-     * @return a the number as String properly formated.
-     */
-    private String formatNumber(int numberToBeFormated) {
-        DecimalFormat myFormatter = new DecimalFormat("$###,###,###.##");
-        return myFormatter.format(numberToBeFormated);
-    }
 
     /**
      * When called must receive a String url and will open default browser on device or ask to the

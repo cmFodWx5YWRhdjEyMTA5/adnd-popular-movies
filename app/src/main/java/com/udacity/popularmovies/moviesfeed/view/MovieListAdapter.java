@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.udacity.popularmovies.R;
 import com.udacity.popularmovies.databinding.ItemListMovieBinding;
 import com.udacity.popularmovies.moviedetails.view.MovieDetailsActivity;
-import com.udacity.popularmovies.moviesfeed.models.Movie;
+import com.udacity.popularmovies.moviesfeed.model.Movie;
 
 import java.util.List;
 
